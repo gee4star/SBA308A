@@ -1,3 +1,7 @@
+/**
+ ********************************* AXIOS VERSION!!!!!!! ********************************
+ */
+
 import * as Carousel from "./Carousel.js";
 import axios from "axios";
 
@@ -23,8 +27,8 @@ const API_KEY =
  * This function should execute immediately.
  */
 async function initialLoad() {
-  const response = await fetch("https://api.thecatapi.com/v1/breeds");
-  const data = await response.json();
+  const data = await axios.get("https://api.thecatapi.com/v1/breeds");
+  // const data = await response.json();
   document.getElementById("breedSelect").innerHTML = "";
   for (let i = 0; i < data.length; i++) {
     const option = document.createElement("option");
@@ -81,6 +85,7 @@ loadBreed();
 /**
  * 3. Fork your own sandbox, creating a new one named "JavaScript Axios Lab."
  */
+
 /**
  * 4. Change all of your fetch() functions to axios!
  * - axios has already been imported for you within index.js.
@@ -90,6 +95,7 @@ loadBreed();
  *   by setting a default header with your API key so that you do not have to
  *   send it manually with all of your requests! You can also set a default base URL!
  */
+
 /**
  * 5. Add axios interceptors to log the time between request and response to the console.
  * - Hint: you already have access to code that does this!
